@@ -9,10 +9,10 @@ cache_path: .github/licenses/
 
 sources:
   go: true
-source_path: cmd/cmd1
 
+# source_path: cmd/cmd1
 # FIXME this should work: https://github.com/github/licensed/blob/master/docs/configuration.md#source-path-glob-patterns
-# source_path: cmd/*
+source_path: cmd/*
 
 ignored:
   go:
