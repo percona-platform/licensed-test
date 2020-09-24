@@ -1,0 +1,36 @@
+---
+name: Licensed
+on:
+  push:
+  # FIXME pull_request:
+
+jobs:
+  test:
+    name: Check licenses
+    timeout-minutes: 10
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code into the Go module directory
+        uses: percona-platform/checkout@v2.3.2
+
+      - name: Set up licensed
+        uses: percona-platform/setup-licensed@v1.0.1
+        with:
+          version: 2.x
+
+      - name: Update cache and check licenses
+        uses: percona-platform/licensed-ci@v1.5.0
+        id: licensed
+        with:
+          workflow: push
+
+      - name: Run debug commands on failure
+        if: failure()
+        run: |
+          env
+          go version
+          go env
+          pwd
+          git status

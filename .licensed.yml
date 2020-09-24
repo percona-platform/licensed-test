@@ -1,0 +1,25 @@
+---
+allowed:
+  - apache-2.0
+  - bsd-3-clause
+  - mit
+  - mpl-2.0
+
+cache_path: .github/licenses/
+
+sources:
+  go: true
+source_path: cmd/cmd1
+
+# FIXME this should work: https://github.com/github/licensed/blob/master/docs/configuration.md#source-path-glob-patterns
+# source_path: cmd/*
+
+ignored:
+  go:
+    - github.com/percona-platform/**/*
+
+# FIXME
+# reviewed:
+#   go:
+#     # - github.com/golang-migrate/migrate/v4/*
+#     - github.com/golang-migrate/migrate/v4/**/*
