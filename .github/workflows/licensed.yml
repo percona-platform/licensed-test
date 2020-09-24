@@ -24,6 +24,7 @@ jobs:
         uses: percona-platform/licensed-ci@v1.5.0
         id: licensed
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: push
 
       - name: Run debug commands on failure
