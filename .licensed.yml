@@ -7,17 +7,16 @@ allowed:
 
 cache_path: .github/licenses/
 
-sources:
-  go: true
-
 source_path: cmd/*
 
-ignored:
-  go:
-    - github.com/percona-platform/**/*
-
-# FIXME
-# reviewed:
+# ignored:
 #   go:
-#     # - github.com/golang-migrate/migrate/v4/*
-#     - github.com/golang-migrate/migrate/v4/**/*
+#     - github.com/percona-platform/**/*
+
+reviewed:
+  go:
+    - github.com/golang-migrate/migrate/v4
+    - github.com/golang-migrate/migrate/v4/database
+    - github.com/golang-migrate/migrate/v4/database/postgres
+    - github.com/golang-migrate/migrate/v4/internal/url
+    - github.com/golang-migrate/migrate/v4/source
